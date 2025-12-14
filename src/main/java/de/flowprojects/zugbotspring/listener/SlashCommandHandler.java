@@ -9,6 +9,6 @@ public class SlashCommandHandler extends ListenerAdapter {
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
-
+        // TODO: implement slash command handling
     }
 }
