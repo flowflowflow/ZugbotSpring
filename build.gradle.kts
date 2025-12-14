@@ -27,7 +27,7 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter")
-    implementation("com.discord4j:discord4j-core:3.3.0")
+    implementation("net.dv8tion:JDA:6.1.2")
 
     compileOnly("org.projectlombok:lombok")
 
