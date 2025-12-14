@@ -59,8 +59,7 @@ public class ContextCommandHandler extends ListenerAdapter {
                     message.removeReaction(Emoji.fromUnicode("\uD83C\uDDEA")).queue();
 
 
-                    event.reply("Done!").setEphemeral(true).queue();
-
+                    event.getHook().sendMessage("Done!").queue();
                 }
                 catch (InsufficientPermissionException e) {
                     event.reply("I don't have permission to remove reactions to that message!").setEphemeral(true).queue();
