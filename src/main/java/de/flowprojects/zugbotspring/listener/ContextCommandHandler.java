@@ -40,6 +40,7 @@ public class ContextCommandHandler extends ListenerAdapter {
                     event.reply("I don't have permission to add reactions to that message!").setEphemeral(true).queue();
                 }
                 catch (IllegalStateException e) {
+                    log.error("Message {} is ephemeral! {}", message.getIdLong(), e.getMessage());
                     event.reply("That message is ephemeral!").setEphemeral(true).queue();
                 }
             }
@@ -62,9 +63,11 @@ public class ContextCommandHandler extends ListenerAdapter {
                     event.getHook().sendMessage("Done!").queue();
                 }
                 catch (InsufficientPermissionException e) {
+                    log.error("Missing permissions to add reactions to message!: {}", e.getMessage());
                     event.reply("I don't have permission to remove reactions to that message!").setEphemeral(true).queue();
                 }
                 catch (IllegalStateException e) {
+                    log.error("Message {} is ephemeral! {}", message.getIdLong(), e.getMessage());
                     event.reply("That message is ephemeral!").setEphemeral(true).queue();
                 }
             }
