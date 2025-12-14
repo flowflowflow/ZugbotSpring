@@ -12,6 +12,7 @@ public class CommandRegistrar {
     private final JDA jda;
 
     //@PostConstruct
+    @SuppressWarnings("unused")
     public void registerCommands() {
 
         jda.updateCommands()
